@@ -1,0 +1,106 @@
+	<ion-view title="Inicio administrador">
+  <ion-header-bar align-title="center" class="bar-assertive">
+    <h1 class="title">Member area</h1>
+    <div class="buttons">
+      <button class="button button-clear" ng-click="logout()">Logout</button>
+    </div>
+  </ion-header-bar>
+  <ion-content class="padding" scroll="true">
+
+    <div class="list" >
+      <div>
+        <a id="top"></a>
+        <map zoom="15">
+        <marker ng-repeat= "pos in positions" position="{{pos.lat}},{{pos.lng}}"></marker>
+        </map>
+      </div>
+      <div id="floating-panel">
+        <button class="button button-small button-block button-assertive" ng-click="centerOnMe()">Buscar mi posicíón</button>
+      </div>
+      Para crear un nuevo punto, debe especificar su posición en el mapa.<p>
+      Para eliminar un punto, debe seleccionarlo en el mapa. Solo puede eliminar puntos creados por usted.
+      <p>
+      <div ng-show="clickOn3=='con1'">
+        <button class="button button-small button-block button-assertive" ng-click="showCon('con1');gotoBottom()">Crear punto</button>
+      </div>  
+      <div ng-show="clickOn3=='con2'">
+        <button class="button button-small button-block button-assertive" ng-click="showCon('con2');gotoBottom()">Eliminar punto</button>
+      </div>
+      <a id="bottom"></a>
+      <div ng-show="clickOn=='con1'">
+        <div id="content">
+          <p>Tarea requerida: 
+            <label class = "item item-input">
+              <input type = "text" placeholder = "Tarea requerida a los voluntarios" ng-model = "point.name">
+            </label>
+          </p>
+          <p>Voluntarios requeridos por día: 
+            <b><label class = "item item-input">
+              <input type = "text" placeholder = "Cantidad de voluntarios necesarios por día" ng-model = "point.cantvoluntarios">
+            </label></b>
+          </p>
+          <p>Descripción: 
+            <b><label class = "item item-input">
+              <input type = "text" placeholder = "Detalles de la tarea a realizar" ng-model = "point.descripcion">
+            </label></b>
+          </p>
+          <p>
+            Seleccione rubro de trabajo:
+          <div class="list">
+            <label class="item item-input item-select">
+              <div class="input-label">
+                Rubro:
+              </div>
+              <select id = "actividad" ng-model = "point.tipoactividad">
+                <option value = "" disabled selected>Seleccione equipo</option>
+                <option value="Salud">Salud</option>
+                <option value="Reconstrucción">Reconstrucción</option>
+                <option value="Recolección">Recolección</option>
+                <option value="Limpieza">Limpieza</option>
+                <option value="Clasificación">Clasificación</option>
+                <option value="Animales">Animales</option>
+                <option value="Apoyo">Apoyo general</option>
+              </select>
+            </label>
+          </div> 
+
+          <p>Fecha de inicio de la actividad:
+          <div class="list">
+            <label class="item item-input">
+              <div class="input-label">
+                Fecha:
+              </div>
+              <input type="date" min="{{fechainiciocal1 | date:'yyyy-MM-dd'}}" ng-model = "point.fechainicio"></input>
+            </label>
+          </div> 
+
+          </p>
+          <p>Dias de trabajo: 
+            <b><label class = "item item-input">
+              <input type = "text" placeholder = "Tiempo de trabajo en días" ng-model = "point.diasdetrabajo">
+            </label></b>
+          </p>
+          <p>
+           <div class="row">
+              <div class="col"><center><button class="button button-assertive" ng-click = "newmarker()">Confirmar datos</button></center></div>
+              <div class="col"><center><button class="button button-assertive" ng-click="showCon('con3');gotoTop()">Cancelar</button></center></div>
+            </div>
+          </p>
+        </div>
+      </div>
+      <a id="bottom"></a>
+      <div ng-show="clickOn=='con2'">
+        <div id="content">
+          Tarea: {{pointe.name}}<p>
+          Descripcion: {{pointe.descripcion}}<p>
+          Direccion: {{pointe.direccion}}<p>
+          Fecha de inicio: {{fecha.fechacont}}<p>
+          Cantidad de voluntarios: {{pointe.cantvoluntarios}}<p>
+          Dias de trabajo: {{pointe.diasdetrabajo}}<p>
+          <center><button class="button button-assertive" ng-click="eliminar(point._id)">Eliminar punto</button></center>
+        </div>
+      </div>
+      <p>
+    </div>
+  </ion-content>
+      </ion-view>

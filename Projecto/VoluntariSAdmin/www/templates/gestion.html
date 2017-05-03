@@ -1,0 +1,30 @@
+<ion-view title="Gestión de grupos">
+  <ion-header-bar align-title="center" class="bar-assertive">
+    <h1 class="title">Member area</h1>
+    <div class="buttons">
+      <button class="button button-clear" ng-click="logout()">Logout</button>
+    </div>
+  </ion-header-bar>
+  <ion-content class="padding">
+    <div class="list">
+      <center>Agregar nuevo grupo</center><p>
+      <div class="item item-input-inset">
+        <label class="item-input-wrapper">
+          <input type="text" placeholder="Nombre del grupo" ng-model="grupo.name">
+        </label>
+        <button class="button button-small button-assertive" ng-click="newgroup()">
+          Agregar Grupo
+        </button>
+      </div>
+    </div>
+    <p>
+    Los grupos listados abajo se utilizan para agrupar a los voluntarios registrados en el sistema.
+    <p>
+    <ion-list ng-controller="getGrupos">
+      <a class="item item-icon-right" ng-model="grupo.name" ng-repeat="grupo in grupos | orderBy:'name'" ng-if="grupo.name!='Ninguno'" value="{{grupo.name}}">
+        {{grupo.name}}
+        <button class="icon ion-trash-a ion-small" ng-click="deleteGroup(grupo.name)"></button>
+      </a>
+    </ion-list>
+  </ion-content>
+</ion-view>

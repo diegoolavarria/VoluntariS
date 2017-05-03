@@ -1,0 +1,28 @@
+	<ion-view title="Perfil">
+  <ion-header-bar align-title="center" class="bar-positive">
+    <h1 class="title">Member area</h1>
+    <div class="buttons">
+      <button class="button button-clear" ng-click="logout()">Logout</button>
+    </div>
+  </ion-header-bar>
+  <ion-content class="padding">
+
+    <div class="list card" >
+      <div class="item item-avatar">
+        <p>Administrador:</p>
+        <h2><div class="item item-text-wrap" ng-controller="getInfoName">{{adminname}}</div></h2>
+      </div>
+
+      <div class="item item-body">
+        <p>
+        </p>
+        <p>Correo electrónico:</p>
+        <h2><div class="item item-text-wrap" ng-controller="getUser">{{adminuser}}</div></h2>
+        <a href="#" class="subdued">Editar correo electrónico</a><p></p>
+        <a href="#" class="subdued">Editar contraseña</a>
+        <p></p>
+      </div>
+    </div>
+
+  </ion-content>
+      </ion-view>

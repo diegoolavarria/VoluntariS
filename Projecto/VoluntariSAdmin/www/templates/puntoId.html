@@ -1,0 +1,43 @@
+<ion-view title="Punto de trabajo">
+  <ion-header-bar align-title="center" class="bar-positive">
+    <h1 class="title">Member area</h1>
+  </ion-header-bar>
+  <ion-content class="padding">
+
+    <div class="list card" ng-controller="getPointName">
+    	Tarea a realizar: {{pointname.name}}
+    </div>
+    <p>
+    <div ng-controller="datosTarea">
+    	Cantidad de usuarios registrados: {{dataobts.length}}
+    	<p>
+    	<div ng-show="clickOn2=='con3'">
+        <button class="button button-block button-assertive" ng-click = "comenzar('con1')">Notificar Usuarios</button>
+        <p>
+        <center><button class="button button-assertive" ng-click="eliminar(pointname._id)" ui-sref="menu.homeadmin">Eliminar actividad</button></center>
+      </div>
+      <div ng-show="clickOn2=='con1'">
+        <p>
+          <div class="item item-divider">
+            <center>¡Voluntarios notificados!</center>
+          </div>
+          <button class="button button-block button-assertive" ng-click="showCon2('con2')">Finalizar actividad</button>
+      </div>
+      <p>
+      <div ng-show="clickOn2=='con2'">
+        Los siguientes correos electrónicos son de cada usuario que participó en la actividad. Al seleccionar un usuario, confirma su participación, permitiendo aumentar el ranking personal de cada voluntario.
+        <p>
+          <p>
+          <ion-item ng-repeat="dataobt in dataobts" value="{{dataobt.voluntario}}">
+            <input type="checkbox" name="selectedVols[]" value="{{dataobt.voluntario}}" ng-model="seleccion[dataobt.voluntario]"/> {{dataobt.voluntario}}
+          </ion-item>
+        <p>
+        <button class="button button-block button-assertive" ng-click="Finalizar()">Confirmar</button>
+      </div>
+      <div ng-show="clickOn2=='con4'">
+        <center><button class="button button-assertive" ng-click="eliminar(pointname._id)" ui-sref="menu.homeadmin">Eliminar actividad</button></center>
+      </div>
+    </div>
+
+  </ion-content>
+</ion-view>

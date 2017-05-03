@@ -1,0 +1,23 @@
+      <ion-view title="Inicio">
+  <ion-header-bar align-title="center" class="bar-positive">
+    <h1 class="title">Member area</h1>
+    <div class="buttons">
+      <button class="button button-clear" ng-click="logout()">Logout</button>
+    </div>
+  </ion-header-bar>
+  <ion-content class="padding">
+    <div class="card"  ng-controller="datosMensaje">
+      <div ng-show="clickOn=='con'">
+        <center>No ha sido llamado a ninguna actividad.</center>
+      </div>
+      <div ng-show="clickOn=='con3'">
+        <ion-item class="item-text-wrap" ng-repeat="datamensaje in datamensajes" value="{{datamensaje.mensaje}}">
+          {{datamensaje.mensaje}}<p>
+          <div class="button-bar button-positive">
+            <button class="button button-small button-block button-assertive" ng-click="centerOnTarea({{datamensaje.posactividad}})" ui-sref="menu.home.misiones">Ir a actividad</button>
+          </div>
+        </ion-item>
+      </div>
+    </div>
+  </ion-content>
+      </ion-view>

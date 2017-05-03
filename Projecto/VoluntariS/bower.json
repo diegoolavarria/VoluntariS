@@ -1,0 +1,27 @@
+{
+  "name": "y",
+  "description": "VoluntariS: An Ionic project",
+  "main": "",
+  "license": "MIT",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-animate": "1.4.3",
+    "angular-sanitize": "1.4.3",
+    "angular-ui-router": "0.2.13",
+    "ionic": "driftyco/ionic-bower#1.2.1",
+    "ionic-platform-web-client": "~0.7.1",
+    "ngCordova": "~0.1.26-alpha",
+    "angular-mocks": "~1.5.7"
+  },
+  "devDependencies": {
+    "ionic-platform-web-client": "~0.7.1"
+  }
+}

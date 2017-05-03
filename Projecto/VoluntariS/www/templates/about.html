@@ -1,0 +1,37 @@
+      <ion-view title="Grupo">
+  <ion-header-bar align-title="center" class="bar-assertive">
+    <h1 class="title">Member area</h1>
+    <div class="buttons">
+      <button class="button button-clear" ng-click="logout()">Logout</button>
+    </div>
+  </ion-header-bar>
+  <ion-content class="padding">
+  <p>
+    <div class="item item-text-wrap" ng-controller="getUser">
+      <p>Equipo:</p>
+      <center><div class="item item-text-wrap">{{profileuser.grupo}}</div></center>
+      <p>
+      </p>
+    </div>
+    <p>
+      <p>
+    Escoger un equipo de trabajo permite conocer la afiliación para la cual los voluntarios trabajan, y obtener un registro 
+    más ordenado de los usuarios en el sistema. Si prefieres no estar afiliado a un equipo, sólo selecciona la opción "Ninguno".
+    <p>
+    <div class="list">
+      <label class="item item-input item-select">
+        <div class="input-label">
+          Seleccione Equipo:
+        </div>
+        <select id = "grupo" ng-model = "user.grupo" ng-controller="getGrupos">
+          <option value = "" disabled selected>Equipo</option>
+          <option ng-repeat="grupo in grupos" value="{{grupo.name}}">{{grupo.name}}</option>
+        </select>
+      </label>
+      <p>
+      <center><button class="button button-assertive" ng-click="updateGrupo()">
+        Cambiar de equipo
+      </button></center>
+    </div> 
+  </ion-content>
+      </ion-view>

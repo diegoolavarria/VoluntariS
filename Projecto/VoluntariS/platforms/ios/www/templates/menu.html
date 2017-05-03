@@ -1,0 +1,37 @@
+    <ion-side-menus enable-menu-with-back-views="false">
+      <ion-side-menu-content drag-content="false">
+        <ion-nav-bar class="bar-stable bar-assertive">
+          <ion-nav-back-button class="button-icon ion-arrow-left-c">
+          </ion-nav-back-button>
+
+          <ion-nav-buttons side="left">
+            <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+            </button>
+          </ion-nav-buttons>
+        </ion-nav-bar>
+        <ion-nav-view name="menuContent"></ion-nav-view>
+      </ion-side-menu-content drag-content="false">
+
+      <ion-side-menu side="left">
+        <ion-header-bar class="bar-stable">
+          <h1 class="title">Menú</h1>
+          <div class="buttons">
+            <button class="button button-clear" ng-click="logout()">CerrarSesión</button>
+          </div>
+        </ion-header-bar>
+        <ion-content>
+          <ul class="list">
+            <a ui-sref="menu.home.misiones" class="item" menu-close>Inicio</a>
+            <a href="#/menu/about" class="item"  menu-close>Grupo</a>
+            <a href="#/menu/perfil" class="item" menu-close>Perfil</a>
+          </ul>
+          <div class="bar bar-footer">
+            <ion-content ng-controller="cerrarApp">
+              <button class="button button-small button-block button-assertive" ng-click="exit()">
+                  Salir
+              </button>
+            </ion-content>
+          </div>
+        </ion-content>
+      </ion-side-menu>
+    </ion-side-menus>

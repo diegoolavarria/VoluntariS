@@ -1,0 +1,37 @@
+<ion-view title="Perfil">
+  <ion-header-bar align-title="center" class="bar-assertive">
+    <h1 class="title">Member area</h1>
+    <div class="buttons">
+      <button class="button button-clear" ng-click="logout()">Logout</button>
+    </div>
+  </ion-header-bar>
+  <ion-nav-buttons side="left">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+  <ion-content class="has-header" ng-controller="getUser">
+
+    <div class="card">
+      <div class="item item-divider">
+        Usuario:<p>
+        <div class="item item-text-wrap">{{profileuser.nombre1}} {{profileuser.nombre2}} {{profileuser.apellido1}} {{profileuser.apellido2}}</div>
+        <p>
+      </div>
+      <div class="item item-divider">
+        Correo electrónico:<p>
+        <div class="item item-text-wrap" >{{profileuser.name}}</div>
+        <p>
+      </div>
+      <div class="item item-divider">
+        Ubicación de referencia:</p>
+        <div class="item item-text-wrap">{{profileuser.direccion}}</div>
+        <p>
+      </div>
+      <p>
+      <div class="row">
+        <div class="col"><center><div ng-controller="getRanking"><img ng-src="{{imageranking.image}}"></div></center></div>
+        <div class="col"><center><p><p>Nivel: <h1>{{profileuser.ranking}}</h1></center></div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
+

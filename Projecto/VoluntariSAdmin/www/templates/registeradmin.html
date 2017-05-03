@@ -1,0 +1,18 @@
+<ion-view title = "Create a new admin">
+  <ion-content class = "padding">
+    <div class = "list">
+      <label class = "item item-input">
+        <input type = "email" placeholder = "Correo electrónico" ng-model = "admin.name">
+      </label>
+      <label class = "item item-input">
+        <input type = "password" placeholder = "Contraseña" ng-model = "admin.password">
+      </label>
+      <label class = "item item-input">
+        <input type = "text" placeholder = "1er nombre" ng-model = "admin.nombrecompleto">
+      </label>
+    </div>  
+    <button class = "button button-full button-positive" ng-click = "signup()">
+      Registrarse
+    </button>
+  </ion-content>
+</ion-view>

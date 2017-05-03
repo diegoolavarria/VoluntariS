@@ -1,0 +1,18 @@
+<ion-view title="Login de administrador">
+  <ion-content class="padding">
+    <div class="list">
+      <label class="item item-input">
+        <input type="email" placeholder="Name" ng-model="admin.name">
+      </label>
+      <label class="item item-input">
+        <input type="password" placeholder="Password" ng-model="admin.password">
+      </label>
+    </div>
+    <button class="button button-full button-balanced" ng-click="login()">
+      Login
+    </button>
+    <button class="button button-positive button-clear button-full" ui-sref="outside.registeradmin">Register new admin</button>
+  </ion-content>
+   <div class="bar bar-footer">
+  </div>
+</ion-view>

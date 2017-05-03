@@ -1,0 +1,76 @@
+	<ion-view title="Perfil administrador">
+  <ion-header-bar align-title="center" class="bar-positive">
+    <h1 class="title">Member area</h1>
+    <div class="buttons">
+      <button class="button button-clear" ng-click="logout()">Logout</button>
+    </div>
+  </ion-header-bar>
+  <ion-content class="padding">
+
+    <div class="list" >
+      <div class="item item-avatar">
+        <p>Usuario:</p>
+        <h2><div class="item item-text-wrap" ng-controller="getUser">{{adminuser}}</div></h2>
+      </div>
+      <p>
+      <div id="floating-panel">
+        <button ng-click="centerOnMe()">Buscar mi posicíón</button>
+      </div>
+      <p>
+      <div>
+          <map zoom="15"> 
+          <!-- ngRepeat: pos in positions -->
+          <marker ng-repeat= "pos in positions" position="{{pos.lat}},{{pos.lng}}"></marker>
+          </map>
+      </div>
+      <p>
+      <div id="content">
+        <p>Tarea requerida: 
+            <label class = "item item-input">
+              <input type = "text" placeholder = "Tarea requerida a los voluntarios" ng-model = "point.name">
+            </label>
+        </p>
+        <p>Voluntarios requeridos por día: 
+            <b><label class = "item item-input">
+              <input type = "text" placeholder = "Cantidad de voluntarios necesarios por día" ng-model = "point.cantvoluntarios">
+            </label></b>
+        </p>
+        <p>Descripción: 
+          <b><label class = "item item-input">
+              <input type = "text" placeholder = "Detalles de la tarea a realizar" ng-model = "point.descripcion">
+            </label></b>
+        </p>
+        <p>
+        <select id = "actividad" ng-model = "point.tipoactividad">
+          <option value = "" disabled selected>Seleccione equipo</option>
+          <option value="Organización">Organización</option>
+          <option value="Salud">Salud</option>
+          <option value="Reconstrucción">Reconstrucción</option>
+          <option value="Limpieza">Limpieza</option>
+        </select>
+        </p>
+        <p>
+          <label class="item item-input">
+            <input type="date" ng-model = "point.fechainicio">
+          </label>
+        </p>
+        <p>Dias de trabajo: 
+            <b><label class = "item item-input">
+              <input type = "text" placeholder = "Tiempo de trabajo en días" ng-model = "point.diasdetrabajo">
+            </label></b>
+        </p>
+        <p>
+        <div class="button-bar">
+          <button class="button" ng-click = "newmarker()">Crear punto</a>
+          <button class="button">Second</a>
+        </div>
+        </p>
+      </div>
+      
+      <p>
+    </div>
+
+
+    
+  </ion-content>
+      </ion-view>

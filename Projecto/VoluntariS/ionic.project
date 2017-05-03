@@ -1,0 +1,11 @@
+{
+  "name": "VoluntariS",
+  "app_id": "69fe59b1", 
+  "proxies": [
+    {
+      "path": "/api",
+      "proxyUrl": "http://voluntaris.herokuapp.com"
+    }
+  ]
+}
+

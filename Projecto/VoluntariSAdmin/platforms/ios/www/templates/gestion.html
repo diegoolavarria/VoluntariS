@@ -1,0 +1,36 @@
+<ion-view title="About">
+  <ion-header-bar align-title="center" class="bar-positive">
+    <h1 class="title">Member area</h1>
+    <div class="buttons">
+      <button class="button button-clear" ng-click="logout()">Logout</button>
+    </div>
+  </ion-header-bar>
+  <ion-content class="padding">
+    <!--<div class="card">
+      <div class="item item-text-wrap">
+        {{adminname}}
+      </div>
+    </div>
+    <button class="button button-full button-assertive" ng-click="destroySession()">
+      Destroy token
+    </button>
+    <button class="button button-full button-balanced" ng-click="getInfoName()">
+      Get Memberinfo
+    </button>-->
+    <div class = "card">
+      Agregar nuevo grupo<p>
+      <tr>
+        <td><input class="form-control" ng-model="grupo.name"></td>
+        <td><button class="btn btn-primary" ng-click="newgroup()">Agregar Grupo</button></td>
+      </tr>
+    </div>
+    <p>
+    Actividades:
+    <p>
+    <!--<ion-list>
+      <ion-item ng-repeat="point in points" value="{{point.name}}" href="#/menu/{{point.name}}">
+        {{point.name}}
+      </ion-item>
+    </ion-list>-->
+  </ion-content>
+</ion-view>

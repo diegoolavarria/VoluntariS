@@ -1,0 +1,21 @@
+<ion-view title="Perfil">
+  <ion-header-bar align-title="center" class="bar-positive">
+    <h1 class="title">Member area</h1>
+  </ion-header-bar>
+  <ion-content class="padding">
+
+    <div class="list card" ng-controller="getPointName">
+    	Tarea a realizar: {{pointname.name}}
+    </div>
+    <p>
+    <div ng-controller="datosTarea">
+    	Cantidad de usuarios registrados: {{dataobt.length}}
+    	<p>
+    	<div class="button-bar">
+          <button class="button" ng-click = "comenzar()">Notificar Usuarios</a>
+          <button class="button">Second</a>
+        </div>
+    </div>
+
+  </ion-content>
+</ion-view>

@@ -1,0 +1,52 @@
+      <ion-view title="Inicio">
+        <ion-content scroll="true">
+          <p>
+
+          <div>
+            <a id="top"></a>
+              <map id="map1" zoom="10"> 
+              <marker ng-repeat=" pos in positions" position="{{pos.lat}},{{pos.lng}}"></marker>
+              </map>
+          </div>
+          <div class="button-bar button-positive">
+            <button class="button button-block button-assertive" ng-click="centerOnMe()">Buscar mi posicíón</button>
+          </div>
+          <div ng-show="clickOn=='con1'">
+            <div class="button-bar button-assertive">
+              <button class="button button-assertive" ng-click="showCon('con2'); gotoBottom()">Participar</button>
+            </div>
+          </div>
+          <a id="bottom"></a>
+          <div ng-show="clickOn=='con2'">
+            <p>
+            <p>Desde y hasta que día puedes asistir?: <p>
+              <b>
+              Comienzo: <!--{{actividad.fechainicio.getDate()  + ' de ' + monthNames[actividad.fechainicio.getMonth()] + ' de ' + actividad.fechainicio.getFullYear()}}-->
+              <label class="item item-input">
+              <input type="date" min="{{fechainiciocal1 | date:'yyyy-MM-dd'}}" max="{{fechafincal1 | date:'yyyy-MM-dd'}}" ng-model = "actividad.fechainicio">
+            </label>
+              Fin: <!--{{actividad.fechafin.getDate()  + ' de ' + monthNames[actividad.fechafin.getMonth()] + ' de ' + actividad.fechafin.getFullYear()}}-->
+              <label class="item item-input">
+              <input type="date" min="{{actividad.fechainicio | date:'yyyy-MM-dd'}}" max="{{fechafincal1 | date:'yyyy-MM-dd'}}"  ng-model = "actividad.fechafin">
+            </label>
+            </p>
+            <div class="row">
+              <div class="col"><center><button class="button button-assertive" ng-click = "newactividad()">Postular</button></center></div>
+              <div class="col"><center><button class="button button-assertive" ng-click="showCon('con1');gotoTop()">Cancelar</button></center></div>
+            </div>
+          </div>
+          <div ng-show="clickOn=='con3'">
+            <button class="button button-small button-block button-assertive" ng-click="crearRuta()">Calcular ruta desde posición actual</button> 
+          </div>
+        </ion-content>
+      </ion-view>
+
+      <!--<script>
+      var monthNames = [
+    "Enero", "Febrero", "Marzo",
+    "Abril", "Mayo", "Junio", "Julio",
+    "Agosto", "Septiembre", "Octubre",
+    "Noviembre", "Diciembre"
+    ];
+    </script>-->
+    
